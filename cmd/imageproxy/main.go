@@ -35,8 +35,8 @@ import (
 	"github.com/gregjones/httpcache/diskcache"
 	rediscache "github.com/gregjones/httpcache/redis"
 	"github.com/peterbourgon/diskv"
-	"github.com/ramonvicelli/imageproxy"
-	"github.com/ramonvicelli/imageproxy/internal/s3cache"
+	"imageproxy"
+	"imageproxy/internal/s3cache"
 )
 
 const defaultMemorySize = 100
