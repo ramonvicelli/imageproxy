@@ -14,7 +14,7 @@
 
 // Package imageproxy provides an image proxy server.  For typical use of
 // creating and using a Proxy, see cmd/imageproxy/main.go.
-package imageproxy // import "willnorris.com/go/imageproxy"
+package imageproxy // import "github.com/ramonvicelli/imageproxy"
 
 import (
 	"bufio"
@@ -32,7 +32,7 @@ import (
 	"time"
 
 	"github.com/gregjones/httpcache"
-	tphttp "willnorris.com/go/imageproxy/third_party/http"
+	tphttp "github.com/ramonvicelli/imageproxy/third_party/http"
 )
 
 // Proxy serves image requests.
@@ -300,6 +300,10 @@ type TransformingTransport struct {
 
 // RoundTrip implements the http.RoundTripper interface.
 func (t *TransformingTransport) RoundTrip(req *http.Request) (*http.Response, error) {
+	
+	req.Header.Set("User-Agent", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.113 Safari/537.36")
+	
+	
 	if req.URL.Fragment == "" {
 		// normal requests pass through
 		if t.log != nil {

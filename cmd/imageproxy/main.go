@@ -35,8 +35,8 @@ import (
 	"github.com/gregjones/httpcache/diskcache"
 	rediscache "github.com/gregjones/httpcache/redis"
 	"github.com/peterbourgon/diskv"
-	"willnorris.com/go/imageproxy"
-	"willnorris.com/go/imageproxy/internal/s3cache"
+	"github.com/ramonvicelli/imageproxy"
+	"github.com/ramonvicelli/imageproxy/internal/s3cache"
 )
 
 const defaultMemorySize = 100
@@ -53,7 +53,7 @@ var verbose = flag.Bool("verbose", false, "print verbose logging messages")
 var version = flag.Bool("version", false, "Deprecated: this flag does nothing")
 
 func init() {
-	flag.Var(&cache, "cache", "location to cache images (see https://github.com/willnorris/imageproxy#cache)")
+	flag.Var(&cache, "cache", "location to cache images (see https://github.com/ramonvicelli/imageproxy#cache)")
 }
 
 func main() {
